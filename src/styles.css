@@ -119,10 +119,10 @@ header .tagline a {
 .scope {
   padding: 12px;
     border-radius: 2px;
-    text-align: center;
+    text-align: left;
     display: inline-block;
     font-size: 1.1rem;
-    width: 300px;
+    width: 500px;
 }
 .contact {
 background: deeppink;
