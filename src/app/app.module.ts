@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { BodyComponent } from './body/body.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { BodyComponent } from './body/body.component';
     FooterComponent,
     HeaderComponent,
     NavComponent,
-    BodyComponent
+    BodyComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule
