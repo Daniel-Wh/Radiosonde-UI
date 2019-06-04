@@ -8,6 +8,16 @@ body {
 body * {
     transition: all 0.400s ease-in-out;
 }
+select {
+    background-color: deeppink;
+    border: 5px;
+    border-bottom: 2px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+option {
+    color: #ffffff;
+}
 
 h1, h2, h3, h4 {
     font-family:Merriweather, Verdana, Geneva, Tahoma, sans-serif;
@@ -73,6 +83,18 @@ nav ul:last-of-type li:last-of-type a {
     color: #fff;
     border-radius: 5px;
     font-weight: bold;
+}
+dropdown {
+    position: inherit;
+
+}
+dropdown select {
+    background-color: deeppink;
+    border: 5px;
+    border-bottom: 2px;
+}
+dropdown .option {
+    color: #ffffff;
 }
 header {
     background: url("/assets/ozone.jpg");
@@ -154,10 +176,6 @@ color: #eee;
     opacity: 0.4;
     z-index: 1;
 }
-
-
-
-
 main {
     margin-top: 0px;
     padding:0px;
