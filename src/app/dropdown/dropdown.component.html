@@ -1,11 +1,11 @@
 <div>
-  <select>
-    <option class="contact" *ngFor="let station of stations" value="station">{{station.name}}</option>
+  <select (change)="onSelectStation($event.target.value)">
+    <option class="contact" *ngFor="let station of stations" value= {{station.id}}>{{station.name}}</option>
   </select>
-  <select>
-    <option class="contact" *ngFor="let season of seasons" value="season">{{season.name}}</option>
+  <select (change)="onSelectSeason($event.target.value)">
+    <option class="contact" *ngFor="let season of seasons" value= {{season.id}}>{{season.name}}</option>
   </select>
-  <select>
-    <option class="contact" *ngFor="let item of oni" value="item">{{item.option}}</option>
+  <select (change)="onSelectOni($event.target.value)">
+    <option class="contact" *ngFor="let item of oni" value= {{item.id}}>{{item.option}}</option>
   </select>
 </div>
