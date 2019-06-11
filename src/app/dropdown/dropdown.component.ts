@@ -39,7 +39,7 @@ export class DropdownComponent implements OnInit {
     {name: 'Winter', id: 104}
   ];
   oni = [
-    {option: "Oceanic Nino Index", id: 99 },
+    {option: 'Oceanic Nino Index', id: 99 },
     {option: 'No ONI specification', id: 200},
     {option: 'El Nino', id: 201},
     {option: 'La Nina', id: 202},
