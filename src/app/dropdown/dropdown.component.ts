@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -10,6 +10,10 @@ export class DropdownComponent implements OnInit {
   public selected_station = 0;
   public selected_season = 0;
   public selected_oni = 0;
+
+  @Output() stationEvent: EventEmitter<any> = new EventEmitter<any>();
+  @Output() seasonEvent = new EventEmitter<any>();
+  @Output() oniEvent = new EventEmitter<any>();
 
   stations = [
     {name: 'Select Station', id: 99},
@@ -46,21 +50,21 @@ export class DropdownComponent implements OnInit {
     {option: 'Neutral', id: 203}
   ];
 
+  constructor() { }
+
   onSelectStation(station_id: number) {
     this.selected_station = station_id;
-    console.log(this.selected_station)
+    this.stationEvent.emit(this.selected_station);
   }
 
   onSelectSeason(season_id: number) {
     this.selected_season = season_id;
-    console.log(this.selected_season)
+    this.seasonEvent.emit(this.selected_season);
   }
   onSelectOni(oni_id: number) {
     this.selected_oni = oni_id;
-    console.log(this.selected_oni)
+    this.oniEvent.emit(this.selected_oni);
   }
-
-  constructor() { }
 
   ngOnInit() {
   }
