@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -7,12 +8,21 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent implements OnInit {
-  constructor() { }
+  constructor(private   http: HttpClient) { }
 
   oni: number;
   season: number;
   station: number;
 
+  onSubmit() {
+    const body = {'oni': this.oni, 'season': this.season, 'station': this.station};
+    const url = '';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    this.http.post(url, body, {headers});
+    console.log(body);
+  }
   receiveStation($event) {
     this.station = $event;
     console.log(this.station);
@@ -27,6 +37,7 @@ export class BodyComponent implements OnInit {
     this.oni = $event;
     console.log(this.oni);
   }
+
 
   ngOnInit() {
   }
