@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.css']
 })
-export class BodyComponent implements OnInit {
+export class BodyComponent implements OnInit, AfterViewInit {
   constructor(private   http: HttpClient) { }
 
   oni: number;
@@ -15,13 +15,18 @@ export class BodyComponent implements OnInit {
   station: number;
 
   onSubmit() {
-    const body = {'oni': this.oni, 'season': this.season, 'station': this.station};
-    const url = '';
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-    this.http.post(url, body, {headers});
-    console.log(body);
+    const body = JSON.stringify({'oni': this.oni, 'season': this.season, 'station': this.station});
+    const url = 'http://127.0.0.1:5000/vis';
+    const headers = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+    this.http.post(url, body, headers).subscribe(
+      response => {
+        return console.log(response);
+      },
+      err => {
+        return console.log(err);
+      }
+    );
+    console.log()
   }
   receiveStation($event) {
     this.station = $event;
@@ -40,5 +45,7 @@ export class BodyComponent implements OnInit {
 
 
   ngOnInit() {
+  }
+  ngAfterViewInit() {
   }
 }
